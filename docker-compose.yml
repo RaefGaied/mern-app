@@ -1,0 +1,40 @@
+version: "3.8"
+
+services:
+  #  MongoDB
+  mongodb:
+    image: mongo
+    container_name: mongodb
+    networks:
+      - mern-network
+    ports:
+      - "27017:27017" 
+
+  #  Server (Express) 
+  server:
+    build: ./server
+    container_name: server
+    ports:
+      - "9000:9000"
+    networks:
+      - mern-network
+    depends_on:
+      - mongodb
+    environment:
+      MONGO_URI: mongodb://mongodb:27017/todos
+
+  #  Client (React) 
+  client:
+    build: ./client
+    container_name: client
+    ports:
+      - "3000:3000"
+    networks:
+      - mern-network
+    depends_on:
+      - server
+
+#  Réseau 
+networks:
+  mern-network:
+    driver: bridge
