@@ -37,7 +37,7 @@ Ce projet consiste à **conteneuriser une application MERN complète** (MongoDB,
 
 ## 📁 Structure du Projet
 
-\`\`\`
+```
 mern-docker/
 ├── client/
 │   ├── Dockerfile
@@ -61,7 +61,7 @@ mern-docker/
     ├── 03_server_logs.png
     ├── 04_client_page.png
     └── 05_network_inspect.png
-\`\`\`
+```
 
 ---
 
@@ -102,7 +102,7 @@ Le fichier `docker-compose.yml` définit trois services :
 
 ### 3️⃣ Construction et Lancement
 
-\`\`\`bash
+```bash
 # Construire les images et lancer les conteneurs
 docker compose up --build
 
@@ -111,7 +111,7 @@ docker compose up
 
 # Lancer en arrière-plan
 docker compose up -d
-\`\`\`
+```
 
 ### 4️⃣ Vérification du Fonctionnement
 
@@ -123,13 +123,13 @@ Après le lancement, vérifiez que :
 
 ### 5️⃣ Arrêt et Nettoyage
 
-\`\`\`bash
+```bash
 # Arrêter les conteneurs
 docker compose down
 
 # Arrêter et supprimer les volumes
 docker compose down -v
-\`\`\`
+```
 
 ---
 
@@ -159,7 +159,7 @@ docker compose down -v
 
 ## 📋 Commandes Utiles
 
-\`\`\`bash
+```bash
 # Lancer le projet
 docker compose up --build
 
@@ -190,23 +190,23 @@ docker network inspect mern-network
 docker exec -it server sh
 docker exec -it client sh
 docker exec -it mongodb mongosh
-\`\`\`
+```
 
 ---
 
 ## 🔧 Configuration des Variables d'Environnement
 
 ### **Backend (.env ou docker-compose.yml)**
-\`\`\`
+```
 MONGO_URI=mongodb://admin:password@mongodb:27017/mern?authSource=admin
 NODE_ENV=development
 PORT=9000
-\`\`\`
+```
 
 ### **Frontend (.env ou docker-compose.yml)**
-\`\`\`
+```
 REACT_APP_API_URL=http://localhost:9000
-\`\`\`
+```
 
 ---
 
@@ -244,29 +244,29 @@ Les conteneurs communiquent via le réseau `mern-network` :
 ### Étapes
 
 1. **Cloner le dépôt**
-   \`\`\`bash
+   ```bash
    git clone https://github.com/<votre-utilisateur>/mern-docker.git
    cd mern-docker
-   \`\`\`
+   ```
 
 2. **Construire et lancer les conteneurs**
-   \`\`\`bash
+   ```bash
    docker compose up --build
-   \`\`\`
+   ```
 
 3. **Accéder à l'application**
    - Frontend : http://localhost:3000
    - Backend : http://localhost:9000
 
 4. **Vérifier les logs**
-   \`\`\`bash
+   ```bash
    docker compose logs -f
-   \`\`\`
+   ```
 
 5. **Arrêter l'application**
-   \`\`\`bash
+   ```bash
    docker compose down
-   \`\`\`
+   ```
 
 ---
 
