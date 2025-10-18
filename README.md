@@ -16,22 +16,38 @@ Ce projet consiste à **conteneuriser une application MERN complète** (MongoDB,
 
 ### Étape 0️⃣ : Fork et Clone du Projet
 
-1. **Forker le dépôt GitLab original** sur votre propre espace Git (GitHub ou GitLab) :
-   ```
-   https://gitlab.com/devops_tps/mern-app
-   ```
+#### 1. Forker le dépôt GitLab original
 
-2. **Cloner votre fork** (et non le dépôt original) en utilisant l'URL SSH :
-   ```bash
-   git clone git@github.com:<votre_utilisateur>/mern-app.git
-   cd mern-app
-   ```
-   > ⚠️ Remplacez `<votre_utilisateur>` par votre nom d'utilisateur GitHub/GitLab
+Accédez au dépôt original et cliquez sur le bouton **Fork** :
 
-3. **Familiarisez-vous avec la structure** :
-   - `client/` → Application React
-   - `server/` → API Express
-   - `docker-compose.yml` → Configuration Docker
+```
+https://gitlab.com/devops_tps/mern-app
+```
+
+**Capture du fork :**
+![Fork GitLab](screenshots/00_fork_gitlab.png)
+*Dépôt forké sur votre compte GitLab/GitHub*
+
+#### 2. Cloner votre fork
+
+Clonez **votre fork** (et non le dépôt original) en utilisant l'URL SSH :
+
+```bash
+git clone git@github.com:<votre_utilisateur>/mern-app.git
+cd mern-app
+```
+
+> ⚠️ Remplacez `<votre_utilisateur>` par votre nom d'utilisateur GitHub/GitLab
+
+**Capture du repo cloné :**
+![Repo Cloné](screenshots/00_repo_cloned.png)
+*Dépôt cloné dans votre machine locale*
+
+#### 3. Familiarisez-vous avec la structure
+
+- `client/` → Application React
+- `server/` → API Express
+- `docker-compose.yml` → Configuration Docker
 
 ---
 
