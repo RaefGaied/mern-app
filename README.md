@@ -17,15 +17,15 @@ Ce projet consiste à **conteneuriser une application MERN complète** (MongoDB,
 ### Étape 0️⃣ : Fork et Clone du Projet
 
 1. **Forker le dépôt GitLab original** sur votre propre espace Git (GitHub ou GitLab) :
-   \`\`\`
+   ```
    https://gitlab.com/devops_tps/mern-app
-   \`\`\`
+   ```
 
 2. **Cloner votre fork** (et non le dépôt original) en utilisant l'URL SSH :
-   \`\`\`bash
+   ```bash
    git clone git@github.com:<votre_utilisateur>/mern-app.git
    cd mern-app
-   \`\`\`
+   ```
    > ⚠️ Remplacez `<votre_utilisateur>` par votre nom d'utilisateur GitHub/GitLab
 
 3. **Familiarisez-vous avec la structure** :
