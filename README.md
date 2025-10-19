@@ -152,11 +152,15 @@ docker compose down -v
 ## 🖼️ Captures d'Écran
 
 ### 📸 1. Construction des Images Docker
+
 ![Docker Build](screenshots/01_docker_build.png)
 *Terminal montrant la construction des images avec `docker compose up --build`*
 
----
-![Docker Build](screenshots/vue dans docker.png)
+![Vue Docker](screenshots/vue_dans_docker.png)
+*Vue des images Docker construites dans Docker Desktop*
+
+![Docker Containers](screenshots/vue_dans_docker_containers.png)
+*Vue des conteneurs en cours d'exécution dans Docker Desktop*
 
 
 ### 📸 2. Conteneurs en Cours d'Exécution
