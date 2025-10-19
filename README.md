@@ -154,6 +154,7 @@ docker compose down -v
 ### 📸 1. Construction des Images Docker
 ![Docker Build](screenshots/01_docker_build.png)
 *Terminal montrant la construction des images avec `docker compose up --build`*
+![Docker Build](screenshots/vue)
 
 ### 📸 2. Conteneurs en Cours d'Exécution
 ![Docker PS](screenshots/02_docker_ps.png)
