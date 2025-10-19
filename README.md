@@ -135,7 +135,7 @@ Après le lancement, vérifiez que :
 
 - ✅ **Frontend** : http://localhost:3000
 - ✅ **Backend** : http://localhost:9000
-- ✅ **MongoDB** : Accessible via `mongodb://admin:password@mongodb:27017/mern`
+- ✅ **MongoDB** : Accessible via `mongodb://mongodb:27017/todos`
 
 ### 5️⃣ Arrêt et Nettoyage
 
@@ -222,8 +222,7 @@ docker exec -it mongodb mongosh
 
 ### **Backend (.env ou docker-compose.yml)**
 ```
-MONGO_URI=mongodb://admin:password@mongodb:27017/mern?authSource=admin
-NODE_ENV=development
+MONGO_URI=mongodb://mongodb:27017/todos
 PORT=9000
 ```
 
@@ -238,8 +237,8 @@ REACT_APP_API_URL=http://localhost:9000
 
 Les conteneurs communiquent via le réseau `mern-network` :
 
-- **Client → Server** : `http://server:9000` (depuis le conteneur)
-- **Server → MongoDB** : `mongodb://admin:password@mongodb:27017/mern`
+- **Client → Server** : `http://localhost:3000` (depuis le conteneur)
+- **Server → MongoDB** : `mongodb://mongodb:27017/todos`
 - **Client (navigateur) → Server** : `http://localhost:9000`
 
 ---
