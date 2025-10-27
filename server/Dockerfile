@@ -12,3 +12,4 @@ COPY . .
 EXPOSE 9000
 # Étape 7 : Démarrer le serveur Express
 CMD ["npm", "start"]
+#trigger

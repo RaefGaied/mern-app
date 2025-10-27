@@ -16,3 +16,4 @@ RUN npm install -g serve
 EXPOSE 3000
 # Étape 9 : Démarrer le serveur pour servir le build
 CMD ["serve", "-s", "build", "-l", "3000"]
+#trigger
