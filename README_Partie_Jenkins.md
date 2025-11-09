@@ -29,7 +29,7 @@ Mettre en place un **pipeline d'intégration continue (CI/CD)** automatisé avec
 
 ## 🏗️ Architecture
 
-\`\`\`
+```
 GitHub (MERN App)
     ↓ (Webhook / Poll SCM)
 Jenkins Server
@@ -40,7 +40,7 @@ Jenkins Server
     └─→ Cleanup & Reports
     ↓
 DockerHub (raefgaied4/mern-server, raefgaied4/mern-client)
-\`\`\`
+```
 
 ---
 
@@ -78,7 +78,7 @@ DockerHub (raefgaied4/mern-server, raefgaied4/mern-client)
 Le `Jenkinsfile` définit un **pipeline déclaratif** avec les étapes suivantes :
 
 #### Structure générale
-\`\`\`groovy
+```groovy
 pipeline {
     agent any
     triggers { pollSCM('H/5 * * * *') }  // Vérifier chaque 5 minutes
@@ -90,7 +90,7 @@ pipeline {
         // Voir le Jenkinsfile complet ci-dessous
     }
 }
-\`\`\`
+```
 
 #### Étapes principales
 
@@ -164,7 +164,7 @@ Les images Docker sont disponibles sur **DockerHub** :
 
 ## 📁 Fichiers livrables
 
-\`\`\`
+```
 .
 ├── README.md                    # Documentation complète (ce fichier)
 ├── Jenkinsfile                  # Pipeline déclaratif Jenkins
@@ -181,18 +181,18 @@ Les images Docker sont disponibles sur **DockerHub** :
     └── Dockerfile
 └── client/                      # Code source client (dans GitHub)
     └── Dockerfile
-\`\`\`
+```
 
 ---
 
 ## 🚀 Comment utiliser
 
 ### 1. **Prérequis**
-\`\`\`bash
+```bash
 # Avoir Jenkins, Docker et Docker-in-Docker configurés
 # Avoir accès à DockerHub
 # Avoir une clé SSH pour GitHub/GitLab
-\`\`\`
+```
 
 ### 2. **Configuration initiale**
 - Ajouter les credentials DockerHub et GitLab SSH dans Jenkins
@@ -206,11 +206,11 @@ Le pipeline s'exécute automatiquement :
 - ✅ Seulement les changements affectant `server/` ou `client/`
 
 ### 4. **Consulter les rapports**
-\`\`\`bash
+```bash
 # Accéder aux logs Jenkins
 # Consulter les rapports Trivy dans la console
 # Vérifier les images publiées sur DockerHub
-\`\`\`
+```
 
 ---
 
