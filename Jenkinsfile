@@ -12,8 +12,8 @@ pipeline {
         stage('Checkout') {
             steps {
                 git branch: 'main',
-                    url: 'https://github.com/RaefGaied/mern-app.git', 
-                    credentialsId: 'gitlab_ssh' 
+                    url: 'https://github.com/RaefGaied/mern-app.git',
+                    credentialsId: 'gitlab_ssh'
             }
         }
 
@@ -50,10 +50,25 @@ pipeline {
                 }
             }
         }
+        
+        stage('Scan avec Trivy') {
+            steps {
+                sh '''
+                echo "=== 🔍 Scan Trivy sur l'image SERVER ==="
+                docker run --rm -v /var/run/docker.sock:/var/run/docker.sock \
+                    aquasec/trivy image $IMAGE_SERVER:${BUILD_NUMBER} > trivy_report.txt
+
+                echo "=== ✅ Rapport Trivy enregistré dans trivy_report.txt ==="
+                echo "Contenu du rapport :"
+                cat trivy_report.txt || true
+                '''
+            }
+        }
     }
 
     post {
         always {
+            echo "🧹 Nettoyage du système Docker..."
             sh 'docker system prune -af || true'
         }
     }
