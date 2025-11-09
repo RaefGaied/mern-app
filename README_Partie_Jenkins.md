@@ -117,7 +117,7 @@ pipeline {
 
 ### Full Pipeline
 
-![Full Pipeline](./screenshots/full_pipeline.png)
+![Full Pipeline](./screenshots/full_pipline.png)
 
 ### Stage: Scan Trivy
 
