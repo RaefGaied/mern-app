@@ -10,13 +10,13 @@ let _db;
 module.exports = {
   connectToMongoDB: async function () {
     try {
-      // Connect to the MongoDB server
+      
       await client.connect();
-      _db = client.db("employees");  // Connect to the "employees" database
+      _db = client.db("employees");  
       console.log("Successfully connected to MongoDB.");
     } catch (error) {
       console.error("Error connecting to MongoDB:", error);
-      throw error;  // Throw the error to be handled by the caller
+      throw error; 
     }
   },
 
